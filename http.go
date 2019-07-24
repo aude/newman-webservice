@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"net/url"
 	"regexp"
+	"github.com/aude/newman-webservice/newman"
 )
 
 func helpHandler(w http.ResponseWriter, r *http.Request) {
@@ -66,7 +67,12 @@ func collectionHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	report := "mock\n"
+	// invoke Newman
+	report, err := newman.JUnitReport(collectionID, environmentID, apiKey)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("error invoking Newman: %s", err.Error()), http.StatusInternalServerError)
+		return
+	}
 
 	fmt.Fprint(w, report)
 }
