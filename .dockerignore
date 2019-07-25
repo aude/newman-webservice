@@ -1,0 +1,7 @@
+newman-webservice
+.git
+.gitignore
+[Dd]ockerfile
+.dockerignore
+docker-compose.yaml
+[Mm]akefile
