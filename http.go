@@ -9,8 +9,7 @@ import (
 )
 
 func helpHandler(w http.ResponseWriter, r *http.Request) {
-	// TODO: add help message
-	http.Error(w, "not implemented: help", http.StatusNotImplemented)
+	http.Error(w, "not implemented: help message", http.StatusNotImplemented)
 }
 
 func collectionsHandler(w http.ResponseWriter, r *http.Request) {
