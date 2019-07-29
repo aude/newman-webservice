@@ -14,7 +14,7 @@ docker-build:
 
 .PHONY: docker-run
 docker-run:
-	docker run -it --rm -p 8080:8080 $(TAG)
+	docker run --rm -p 8080:8080 $(TAG)
 
 .PHONY: docker-clean
 docker-clean:
